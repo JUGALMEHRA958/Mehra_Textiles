@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
+import { Link } from "react-router-dom";
 function MyNavbar() {
   return (
     <Navbar bg="light" expand="lg">
@@ -26,7 +26,9 @@ function MyNavbar() {
                 Your orders
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Logout.</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.4">
+                <Link to="/login">Login</Link>
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

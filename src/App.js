@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to Mehra textiles</h1>
+      <h2>{process.env.LINK}</h2>
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="/" element={<Home />} />

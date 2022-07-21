@@ -26,7 +26,7 @@ function MyNavbar() {
                 Your orders
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.4">Logout.</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

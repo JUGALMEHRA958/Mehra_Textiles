@@ -4,6 +4,8 @@ import { Button, Alert, Breadcrumb } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MyNavbar from "./Components/Navbar";
 import { Routes, Route, Link } from "react-router-dom";
+// require("dotenv").config();
+import { URL } from "./api";
 // import { Link } from "react-router-dom";
 // import { Link } from "react-router";
 // var Link = require("react-router").Link;
@@ -11,8 +13,9 @@ import { Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
     <div className="App">
+      {console.log(URL)}
       <h1>Welcome to Mehra textiles</h1>
-      <h2>{process.env.LINK}</h2>
+      <h2>{URL}</h2>
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="/" element={<Home />} />

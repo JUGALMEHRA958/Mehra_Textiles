@@ -4,23 +4,76 @@ import { Button, Alert, Breadcrumb } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MyNavbar from "./Components/Navbar";
 import { Routes, Route, Link } from "react-router-dom";
-// require("dotenv").config();
 import { URL } from "./api";
-// import { Link } from "react-router-dom";
-// import { Link } from "react-router";
-// var Link = require("react-router").Link;
-
 function App() {
   return (
     <div className="App">
-      {console.log(URL)}
-      <h1>Welcome to Mehra textiles</h1>
-      <h2>{URL}</h2>
       <Routes>
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route path="/" element={<Home />} />
       </Routes>
       {/* <MyNavbar></MyNavbar> */}
+    </div>
+  );
+}
+function Register() {
+  return (
+    <div>
+      <h2>Welcome to Register page</h2>
+      <p>Register here</p>
+      <div className="container">
+        <form>
+          {/* // <!-- Email input --> */}
+          <center>
+            <div class="form-outline mb-4  ">
+              <label class="form-label" for="form2Example1">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="form2Example1"
+                class="form-control col-md-2"
+              />
+            </div>
+            <div class="form-outline mb-4  ">
+              <label class="form-label" for="form2Example1">
+                Email address
+              </label>
+              <input
+                type="email"
+                id="form2Example1"
+                class="form-control col-md-2"
+              />
+            </div>
+          </center>
+
+          {/* // <!-- Password input --> */}
+          <center>
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example2">
+                Password
+              </label>
+              <input
+                type="password"
+                id="form2Example2"
+                class="form-control col-md-2"
+              />
+            </div>
+          </center>
+
+          <button type="button" class="btn btn-primary btn-block mb-4 col-md-2">
+            Register
+          </button>
+
+          {/* // <!-- Register buttons --> */}
+          <div class="text-center">
+            <p>
+              Already a member? <Link to="/login">Login</Link>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
@@ -93,24 +146,9 @@ function Login() {
           {/* // <!-- Register buttons --> */}
           <div class="text-center">
             <p>
-              Not a member? <a href="#!">Register</a>
+              Not a member? <Link to="/register">Register</Link>
             </p>
-            <p>or sign up with:</p>
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fab fa-facebook-f"></i>
-            </button>
-
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fab fa-google"></i>
-            </button>
-
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fab fa-twitter"></i>
-            </button>
-
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fab fa-github"></i>
-            </button>
+            <Link to="/">Continue without login</Link>
           </div>
         </form>
       </div>
@@ -126,10 +164,9 @@ function Home() {
   return (
     <>
       <MyNavbar></MyNavbar>
-      {/* <main> */}
 
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
       </nav>
     </>
   );

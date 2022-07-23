@@ -1,15 +1,28 @@
-import React from "react";
+// import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+// import ReactDOM from 'react-dom';
+import './index.css';
+// import App from './App';
+// import registerServiceWorker from './registerServiceWorker';
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+import rootReducer from './reducers';
 
+const store = createStore(rootReducer,
+//needed for dev tools
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

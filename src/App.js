@@ -6,6 +6,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { URL } from "./api";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
+import Counter from "./Components/Counter";
 function App() {
   return (
     <div className="App">
@@ -20,7 +21,8 @@ function App() {
 function HomePage() {
   return (
     <div>
-      {alert("Welcome to Mehra textiles")}
+      {/* {alert("Welcome to Mehra textiles")} */}
+      <Counter></Counter>``
       <MyNavbar></MyNavbar>
     </div>
   );
